@@ -15,9 +15,9 @@ Today, I'd like to teach you about the power of these tools so you too can up yo
 
 * [Introduction to iNaturalist](#introduction-to-inaturalist)
 * [Introduction to R](#introduction-to-r)
-  *[User-friendly R coding with Rstudio](#rstudio)
-  *[CRAN](#cran)
-  *[Loading and Installing Packages](#loading-and-installing-packages)
+  * [User-friendly R coding with Rstudio](#rstudio)
+  * [CRAN](#cran)
+  * [Loading and Installing Packages](#loading-and-installing-packages)
 * [Code and Instructions for Mapping iNaturalist Data in R](#mapping-inat-in-r)
 * [Code for Counting and Visualizing Papers Discussing iNaturalist](#inat-keyword)
 * [Resources for New Coders](#beginning-coding)
