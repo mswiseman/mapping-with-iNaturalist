@@ -29,7 +29,10 @@ Today, I'd like to teach you about the power of these tools so you too can up yo
 
 ## Introduction to iNaturalist
 [Back to top](#introduction-to-inaturalist)
-[iNaturalist](https://www.inaturalist.org/)  is a social network of naturalists, citizen scientists, and biologists built on the concept of mapping and sharing observations of biodiversity across the globe. In 2017, iNaturalist usage exploded due to the release of a computer vision tool that automatically suggests species IDs from uploaded pictures. Observers can using powerful computer vision tools to assist their observations, identify other When iNaturalist observers take high quality photographs of taxa, upload them with geodata, and include relevant notes, these data can then be used in a multitude of studies such examining biodiversity, monitoring endangered species, understanding species hybridization, tracking invasive species, etc. 
+[iNaturalist](https://www.inaturalist.org/)  is a social network of naturalists, citizen scientists, and biologists built on the concept of mapping and sharing observations of biodiversity across the globe. In 2017, iNaturalist usage exploded due to the release of a computer vision tool that automatically suggests species IDs from uploaded pictures. As computer-vision aided identification lowered the barrier to entry, more and more citizen scientists started using the tool. Consequently, the use of iNaturalist data in conservation, biodiversity, hybridization, phylogeography, etc., research also exploded. 
+
+![iNaturalist citation growth](images/iNatPaperGrowth.png)
+ 
 
 [Getting started in iNaturalist](https://www.inaturalist.org/pages/getting+started).
 
