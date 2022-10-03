@@ -58,9 +58,9 @@ Simply navigate to [iNaturalist](https://www.inaturalist.org/), sign up for an a
 ## Introduction to R 
 [Back to top](#table-of-contents)
 
-Note: This first section's text is quoted directly from **An Introduction to R** written by Bill Venables and David M. Smith. [Download the pdf](https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf) for a more comprehensive introduction to R.
+*Note: This first section's text is quoted directly from **An Introduction to R** written by Bill Venables and David M. Smith. [Download the pdf](https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf) for a more comprehensive introduction to R.*
 
-[R](https://www.r-project.org/) is an integrated suite of software facilities for data manipulation, calculation and graphical display. Among other things it has:
+**[R](https://www.r-project.org/)** is an integrated suite of software facilities for **data manipulation, calculation and graphical display**. Among other things it has:
 
 * an effective data handling and storage facility,
 * a suite of operators for calculations on arrays, in particular matrices,
@@ -76,7 +76,9 @@ programs written in R are essentially ephemeral, written for a single piece of d
 ### User-friendly R coding with Rstudio
 [Back to top](#table-of-contents)
 
-[RStudio](https://www.rstudio.com/products/rstudio/) is an integrated development environment (IDE) for R. It includes a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging and workspace management. **For most of my R coding, I use Rstudio and I recommend you do the same due to its ease-of-use**. 
+**[RStudio](https://www.rstudio.com/products/rstudio/)** is an integrated development environment (IDE) for R. It includes a **console, syntax-highlighting editor** that supports direct code execution, as well as **tools for plotting, history, debugging and workspace management**. 
+
+**For most of my R coding, I use Rstudio and I recommend you do the same due to its ease-of-use**. 
 
 There's a nice list of Rstudio tutorials [here](https://education.rstudio.com/learn/beginner/).
 
@@ -85,9 +87,9 @@ There's a nice list of Rstudio tutorials [here](https://education.rstudio.com/le
 ### Comprehensive R Archive Network (CRAN)
 [Back to top](#table-of-contents)
 
-R is an open source tool which offers great flexibility in customization of code, but can also present issues with package compatibility (e.g. conflicting code in between libraries) and poor package management (i.e. things get outdated and abandoned). You can always check the status of a package by looking at it's Comprehensive R Archive Network (CRAN) repository information. The CRAN page for a package will tell you when it was last updated, any necessary dependencies for the package, will link you to the reference manual, and will link you to a page where you can submit bug fix requests. *Most packages are on [CRAN](https://cran.r-project.org/) or are directly hosted on [GitHub](https://github.com/).*
+R is an open source tool which offers great flexibility in customization of code, but can also present issues with package compatibility (e.g. conflicting code in between libraries) and poor package management (i.e. things get outdated and abandoned). You can always check the status of a package by looking at it's Comprehensive R Archive Network (CRAN) repository information. The CRAN page for a package will tell you when it was last updated, any necessary dependencies for the package, will link you to the reference manual, and will link you to a page where you can submit bug fix requests. **Most packages are on [CRAN](https://cran.r-project.org/) or are directly hosted on [GitHub](https://github.com/).**
 
-The CRAN pages are linked below for today's required packages:
+The [CRAN](https://cran.r-project.org/) pages are linked below for today's required packages:
 
 * [ggmaps](https://cran.r-project.org/web/packages/ggmaps/index.html)
 * [janitor](https://cran.r-project.org/web/packages/janitor/index.html)
@@ -96,7 +98,7 @@ The CRAN pages are linked below for today's required packages:
 * [rinat](https://cran.r-project.org/web/packages/rinat/index.html)
 * [tidyverse](https://cran.r-project.org/web/packages/tidyverse/index.html)
 
-There are also developmental versions which often contain coding examples on GitHub:
+There are also developmental versions which often contain coding examples on [GitHub](https://github.com/):
 
 * [ggmap](https://github.com/dkahle/ggmap)
 * [janitor](https://github.com/sfirke/janitor)
@@ -120,6 +122,8 @@ Once your packages have installed, load them using the command `library([package
 
 ## Using R for powerful iNaturalist data analyses
 [Back to top](#table-of-contents)
+
+**Lets map some fungi.**
  
 First, load and install required packages.
 
