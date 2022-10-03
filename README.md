@@ -170,7 +170,8 @@ Let's check out the output:
 ![speciesmap](images/inat-trail-species-map-prefilter.png)
 
 **The species list output file**
-![specieslist](images/inat-trail-list-output.png)
+| ![specieslist](images/inat-trail-list-output.png) |
+|-|
 
 On both the map and the species list you can click on waypoints and links, respectively, to get more information about each observation. If you expected more observations along your trail it's probably because the default observation filtering is `research-grade`. Run `./inat_trails.py -h` to explore observation grade options amongst other customizable parameters. 
 
