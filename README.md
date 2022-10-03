@@ -147,10 +147,12 @@ Map written to './Rancho_Canada_del_Oro_Open_Space_Preserve_all_research_mapped_
 Assuming things work, lets try a different trail. Pick one that you regularly recreate on. For this example, I'll look at a loop trail at the Lewisburg Saddle here in Corvallis, OR.  Navigate to [Caltopo](https://caltopo.com/) and search your trail (for me: `Lewisburg Saddle`). Next, use the line tool to trace your trail (note: this shouldn't be hard since the path autofits to the trail as you go). Save the trail with a name and export it as a GPX file. 
 
 **Tracing and saving our trail**
-![tracinglewisburgsaddle](images/line-tracing-saddle.png)
+| ![tracinglewisburgsaddle](images/line-tracing-saddle.png) |
+|-|
 
 **Exporting our trail data**
-![exportlewisburgsaddle](images/inat-trail-exporting-path.png)
+| ![exportlewisburgsaddle](images/inat-trail-exporting-path.png) |
+|-|
 
 Rename your exported file to reflect the trail and move it into the examples directory (e.g. `~/iNat-trails-master/examples/`). Now, lets rerun with our trail!
 
@@ -167,7 +169,8 @@ Let's check out the output:
 * Map of Species Along the Trail: `./McDonald_State_Forest_all_research_mapped_observations.html`
 
 **The trail species map output file**
-![speciesmap](images/inat-trail-species-map-prefilter.png)
+| ![speciesmap](images/inat-trail-species-map-prefilter.png) |
+|-|
 
 **The species list output file**
 | ![specieslist](images/inat-trail-list-output.png) |
