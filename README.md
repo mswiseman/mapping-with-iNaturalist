@@ -204,11 +204,15 @@ Let's check out the output:
 | ![speciesmap](images/inat-trail-species-map-prefilter.png) |
 |-|
 
+To examine specific taxa along my trail I can check or uncheck the boxes next to the various taxon groups. While not explicitly stated, the taxonomic names are organized by relation, so the fungal families group together, plants group together, etc. 
+
 **The species list output file**
 | ![specieslist](images/inat-trail-list-output.png) |
 |-|
 
-On both the map and the species list you can click on waypoints and links, respectively, to get more information about each observation. If you expected more observations along your trail it's probably because the default observation filtering is `research-grade`. Run `./inat_trails.py -h` to explore observation grade options amongst other customizable parameters. 
+The species map gives a nice hierarchical species list of the species observed along your trail. In addition, each observation has a direct link to the iNaturalist entry, thus enabling further investigation if necessary. 
+
+If you expected more observations along your trail it's probably because the default observation filtering is `research-grade`. Run `./inat_trails.py -h` to explore observation grade options amongst other customizable parameters. 
 
 ```
 usage: inat_trails.py [-h] [--quality_grade QUALITY_GRADE] [--iconic_taxon ICONIC_TAXON] [--login_names] gpx_file [gpx_file ...]
@@ -227,15 +231,25 @@ optional arguments:
   --month               Show only observations from this month and the previous and next months.
   ```
 
-
 ---
 
 ## Exporting photos
 [Back to top](#table-of-contents)
 
-* [iNaturalist Open Data](https://github.com/inaturalist/inaturalist-open-data)
+iNaturalist has computer vision models for over 55,000 taxa. To ascertain whether your taxa of interest is in that dataset, look out for this tag on your taxon's page:
 
+![computer vision tag](computer-vision-info.png)
 
+If your taxon does not yet have a computer vision model, you can download iNaturalist photos to make your own. To download photos for specific taxa, check out the following resources:
+
+* [iNaturalist Open Data](https://github.com/inaturalist/inaturalist-open-data) **Expert level**
+* [getiNat Photo Data](https://github.com/rasanderson/BIO8068-getimages/blob/main/get_data.R)
+
+Resources for training your own model using the photos you've downloaded:
+
+* [Butterfly Machine Learning](https://github.com/CSellwood1/Deep-learning/blob/master/wildlife_images_CS.docx) - an excellent and thorough iNat machine learning tutorial
+
+*more to come...*
 
 ---
 
@@ -286,7 +300,9 @@ I added the text and arrow in powerpoint, but you can easily add it in ggplot us
 ## Resources
 [Back to top](#table-of-contents)
 
-* [Caltopo](https://caltopo.com/)
+* [Caltopo](https://caltopo.com/) - free web-based mapping
+* [pyNaturalist](https://github.com/pyinat/pyinaturalist) - manipulation of iNat data with python
+* [iNat National Park Observations](https://github.com/NatureServe/inat-nps-download) - for exploring National Park iNat observations
 
 
 ---
