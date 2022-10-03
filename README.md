@@ -19,7 +19,7 @@ Today, I'd like to teach you about the power of these tools so you too can up yo
   * [Comprehensive-R-Archive-Network-(CRAN)](#Comprehensive-R-Archive-Network-(CRAN))
   * [Loading and Installing Packages](#loading-and-installing-packages)
 * [Code and Instructions for Mapping iNaturalist Data in R](#mapping-inat-in-r)
- * [Mapping along a trail](#Mapping-iNaturalist-observations-along-a-trail)
+* [Mapping along a trail](#Mapping-iNaturalist-observations-along-a-trail)
 * [Code for Counting and Visualizing Papers Discussing iNaturalist](#inat-keyword)
 * [Resources](#resources)
 * [Other](#other)
@@ -233,19 +233,21 @@ optional arguments:
 
 ---
 
-## Exporting photos
+## Training your own model
 [Back to top](#table-of-contents)
 
 iNaturalist has computer vision models for over 55,000 taxa. To ascertain whether your taxa of interest is in that dataset, look out for this tag on your taxon's page:
 
 ![computer vision tag](computer-vision-info.png)
 
-If your taxon does not yet have a computer vision model, you can download iNaturalist photos to make your own. To download photos for specific taxa, check out the following resources:
+If your taxon does not yet have a computer vision model, you can download iNaturalist photos to make your own. These analyses may have a higher barrier to entry, but don't let the code intimidate you - there's lots of great information out there and it's fairly simple if you take your time. 
+
+**To download photos for specific taxa, check out the following resources:**
 
 * [iNaturalist Open Data](https://github.com/inaturalist/inaturalist-open-data) **Expert level**
 * [getiNat Photo Data](https://github.com/rasanderson/BIO8068-getimages/blob/main/get_data.R)
 
-Resources for training your own model using the photos you've downloaded:
+**Resources for training your own model using the photos you've downloaded:**
 
 * [Butterfly Machine Learning](https://github.com/CSellwood1/Deep-learning/blob/master/wildlife_images_CS.docx) - an excellent and thorough iNat machine learning tutorial
 
