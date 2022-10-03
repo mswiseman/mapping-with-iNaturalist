@@ -238,7 +238,7 @@ optional arguments:
 
 iNaturalist has computer vision models for over 55,000 taxa. To ascertain whether your taxa of interest is in that dataset, look out for this tag on your taxon's page:
 
-![computer vision tag](computer-vision-info.png)
+![computer vision tag](images/computer-vision-info.png)
 
 You can see an example of this on the *[Gomphus clavatus](https://www.inaturalist.org/taxa/54121-Gomphus-clavatus)* (Pig's Ear) taxon page. 
 
