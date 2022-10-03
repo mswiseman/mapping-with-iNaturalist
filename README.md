@@ -240,6 +240,8 @@ iNaturalist has computer vision models for over 55,000 taxa. To ascertain whethe
 
 ![computer vision tag](computer-vision-info.png)
 
+You can see an example of this on the *[Gomphus clavatus](https://www.inaturalist.org/taxa/54121-Gomphus-clavatus)* (Pig's Ear) taxon page. 
+
 If your taxon does not yet have a computer vision model, you can download iNaturalist photos to make your own. These analyses may have a higher barrier to entry, but don't let the code intimidate you - there's lots of great information out there and it's fairly simple if you take your time. 
 
 **To download photos for specific taxa, check out the following resources:**
