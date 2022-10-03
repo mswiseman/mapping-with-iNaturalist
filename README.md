@@ -61,20 +61,25 @@ There's a nice list of Rstudio tutorials [here](https://education.rstudio.com/le
 ### Comprehensive R Archive Network (CRAN)
 [Back to top](#table-of-contents)
 
-R is an open source tool which offers great flexibility in customization of code, but can also present issues with package compatibility (e.g. conflicting code in between libraries) and poor package management (i.e. things get outdated and abandoned). You can always check the status of a package by looking at it's *Comprehensive R Archive Network (CRAN)* repository information. The CRAN page for a package will tell you when it was last updated, any necessary dependencies for the package, will link you to the reference manual, and will link you to a page where you can submit bug fix requests. *Most packages are on [CRAN](https://cran.r-project.org/)* or are directly hosted on [GitHub](https://github.com/).
+R is an open source tool which offers great flexibility in customization of code, but can also present issues with package compatibility (e.g. conflicting code in between libraries) and poor package management (i.e. things get outdated and abandoned). You can always check the status of a package by looking at it's Comprehensive R Archive Network (CRAN) repository information. The CRAN page for a package will tell you when it was last updated, any necessary dependencies for the package, will link you to the reference manual, and will link you to a page where you can submit bug fix requests. *Most packages are on [CRAN](https://cran.r-project.org/) or are directly hosted on [GitHub](https://github.com/).*
 
 The CRAN pages are linked below for today's required packages:
 
-* [tidyverse](https://cran.r-project.org/web/packages/tidyverse/index.html)
-* [rinat](https://cran.r-project.org/web/packages/rinat/index.html)
-* [lubridate](https://cran.r-project.org/web/packages/lubridate/index.html)
-* [maps](https://cran.r-project.org/web/packages/maps/index.html)
 * [ggmaps](https://cran.r-project.org/web/packages/ggmaps/index.html)
 * [janitor](https://cran.r-project.org/web/packages/janitor/index.html)
+* [lubridate](https://cran.r-project.org/web/packages/lubridate/index.html)
+* [maps](https://cran.r-project.org/web/packages/maps/index.html)
+* [rinat](https://cran.r-project.org/web/packages/rinat/index.html)
+* [tidyverse](https://cran.r-project.org/web/packages/tidyverse/index.html)
 
-There are also developmental versions of some of these packages on GitHub:
+There are also developmental versions which often contain coding examples on GitHub:
 
-*[rinat](https://github.com/ropensci/rinat)
+* [ggmap](https://github.com/dkahle/ggmap)
+* [janitor](https://github.com/sfirke/janitor)
+* [lubridate](https://github.com/tidyverse/lubridate)
+* [maps](https://github.com/nextcloud/maps)
+* [rinat](https://github.com/ropensci/rinat)
+* [tidyverse](https://github.com/tidyverse/tidyverse)
 
 ### Loading required packages
 [Back to top](#table-of-contents)
@@ -141,8 +146,10 @@ Map written to './Rancho_Canada_del_Oro_Open_Space_Preserve_all_research_mapped_
 
 Assuming things work, lets try a different trail. Pick one that you regularly recreate on. For this example, I'll look at a loop trail at the Lewisburg Saddle here in Corvallis, OR.  Navigate to [Caltopo](https://caltopo.com/) and search your trail (for me: `Lewisburg Saddle`). Next, use the line tool to trace your trail (note: this shouldn't be hard since the path autofits to the trail as you go). Save the trail with a name and export it as a GPX file. 
 
+**Tracing and saving our trail**
 ![tracinglewisburgsaddle](images/line-tracing-saddle.png)
 
+**Exporting our trail data**
 ![exportlewisburgsaddle](images/inat-trail-exporting-path.png)
 
 Rename your exported file to reflect the trail and move it into the examples directory (e.g. `~/iNat-trails-master/examples/`). Now, lets rerun with our trail!
@@ -159,8 +166,12 @@ Let's check out the output:
 * Species Table: `./McDonald_State_Forest_all_research_observations.html`
 * Map of Species Along the Trail: `./McDonald_State_Forest_all_research_mapped_observations.html`
 
+**The trail species map output file**
 ![speciesmap](images/inat-trail-species-map-prefilter.png)
+
+**The species list output file**
 ![specieslist](images/inat-trail-list-output.png)
+
 On both the map and the species list you can click on waypoints and links, respectively, to get more information about each observation. If you expected more observations along your trail it's probably because the default observation filtering is `research-grade`. Run `./inat_trails.py -h` to explore observation grade options amongst other customizable parameters. 
 
 ```
