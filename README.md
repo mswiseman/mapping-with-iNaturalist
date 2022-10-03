@@ -26,14 +26,30 @@ Today, I'd like to teach you about the power of these tools so you too can up yo
 * [Contact](#contact)
 * [Acknowledgements](#acknowledgements)
 
+---
+
 ## Introduction to iNaturalist
 [Back to top](#table-of-contents)
+
 [iNaturalist](https://www.inaturalist.org/)  is a social network of naturalists, citizen scientists, and biologists built on the concept of mapping and sharing observations of biodiversity across the globe. In 2017, iNaturalist usage exploded due to the release of a computer vision tool that automatically suggests species IDs from uploaded pictures. As computer-vision aided identification lowered the barrier to entry, more and more citizen scientists started using the tool. Consequently, the use of iNaturalist data in conservation, biodiversity, hybridization, phylogeography, etc., research also exploded. 
 
 ![iNaturalist citation growth](images/iNatPaperGrowth.png)
- 
 
-[Getting started in iNaturalist](https://www.inaturalist.org/pages/getting+started).
+Using iNaturalist is easy - simply capture the nature world, record any pertinent notes (e.g. location if your camera/phone doesn't capture lat/long coordinates), and upload to [iNaturalist](https://www.inaturalist.org/).  
+
+** Using iNaturalist on your Phone **
+First, download the iNaturalist application to your iPhone or Android phone. Then, follow the instructions below (provided by [iNaturalist](https://www.inaturalist.org/pages/getting+started)).
+
+![iNaturalist using a phone](images/phone-observations.png)
+
+** Using iNaturalist on the web**
+Simply navigate to [iNaturalist](https://www.inaturalist.org/), sign up for an account, and then you're ready to make observations. 
+
+![iNaturalist using the web](images/web-observations.png)
+
+**For a more detailed tutorial, check out [getting started in iNaturalist](https://www.inaturalist.org/pages/getting+started).**
+
+---
 
 ## Introduction to R 
 [Back to top](#table-of-contents)
@@ -51,12 +67,16 @@ Note: This first section's text is quoted directly from **An Introduction to R**
 The term “environment” is intended to characterize it as a fully planned and coherent system, rather than an incremental accretion of very specific and inflexible tools, as is frequently the case with other data analysis software. R is very much a vehicle for newly developing methods of interactive data analysis. It has developed rapidly, and has been extended by a large collection of packages. However, most
 programs written in R are essentially ephemeral, written for a single piece of data analysis.
 
+---
+
 ### User-friendly R coding with Rstudio
 [Back to top](#table-of-contents)
 
 [RStudio](https://www.rstudio.com/products/rstudio/) is an integrated development environment (IDE) for R. It includes a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging and workspace management. **For most of my R coding, I use Rstudio and I recommend you do the same due to its ease-of-use**. 
 
 There's a nice list of Rstudio tutorials [here](https://education.rstudio.com/learn/beginner/).
+
+---
 
 ### Comprehensive R Archive Network (CRAN)
 [Back to top](#table-of-contents)
@@ -81,6 +101,8 @@ There are also developmental versions which often contain coding examples on Git
 * [rinat](https://github.com/ropensci/rinat)
 * [tidyverse](https://github.com/tidyverse/tidyverse)
 
+---
+
 ### Loading required packages
 [Back to top](#table-of-contents)
 
@@ -89,6 +111,8 @@ To best utilize the power of R, you must install and load the accessory packages
 As the packages install, you may be prompted to also install dependencies. Say yes to any dependencies.
 
 Once your packages have installed, load them using the command `library([packagename])`. As above, you can combine them all in one line of code if you wish, though I prefer to keep them separated for ease of customization.
+
+---
 
 ## Using R for powerful iNaturalist data analyses
 [Back to top](#table-of-contents)
@@ -249,15 +273,12 @@ I added the text and arrow in powerpoint, but you can easily add it in ggplot us
 
 ![iNaturalist citation growth](images/iNatPaperGrowth.png)
 
+---
+
 ## Resources
 [Back to top](#table-of-contents)
 
 * [Caltopo](https://caltopo.com/)
-
-
----
-Beginning coding resources
-[Back to top](#table-of-contents)
 
 
 ---
