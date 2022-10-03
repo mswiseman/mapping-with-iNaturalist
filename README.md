@@ -15,14 +15,13 @@ Today, I'd like to teach you about the power of these tools so you too can up yo
 
 * [Introduction to iNaturalist](#introduction-to-inaturalist)
 * [Introduction to R](#introduction-to-r)
-  *[User-friendly R coding with Rstudio](#User-friendly-R-coding-with-Rstudio)
-  *[Comprehensive-R-Archive-Network-(CRAN)](#Comprehensive-R-Archive-Network-(CRAN))
-  *[Loading and Installing Packages](#loading-and-installing-packages)
+  * [User-friendly R coding with Rstudio](#User-friendly-R-coding-with-Rstudio)
+  * [Comprehensive-R-Archive-Network-(CRAN)](#Comprehensive-R-Archive-Network-(CRAN))
+  * [Loading and Installing Packages](#loading-and-installing-packages)
 * [Code and Instructions for Mapping iNaturalist Data in R](#mapping-inat-in-r)
+ * [Mapping along a trail](#Mapping-iNaturalist-observations-along-a-trail)
 * [Code for Counting and Visualizing Papers Discussing iNaturalist](#inat-keyword)
-* [Resources for New Coders](#beginning-coding)
-* [R iNaturalist Resources](#resources)
-* [Books](#books)
+* [Resources](#resources)
 * [Other](#other)
 * [Contact](#contact)
 * [Acknowledgements](#acknowledgements)
@@ -143,7 +142,9 @@ Map written to './Rancho_Canada_del_Oro_Open_Space_Preserve_all_research_mapped_
 Assuming things work, lets try a different trail. Pick one that you regularly recreate on. For this example, I'll look at a loop trail at the Lewisburg Saddle here in Corvallis, OR.  Navigate to [Caltopo](https://caltopo.com/) and search your trail (for me: `Lewisburg Saddle`). Next, use the line tool to trace your trail (note: this shouldn't be hard since the path autofits to the trail as you go). Save the trail with a name and export it as a GPX file. 
 
 ![tracinglewisburgsaddle](images/line-tracing-saddle.png)
-![exportlewisburgsaddle](inat-trail-exporting-path.png)
+
+![exportlewisburgsaddle](images/inat-trail-exporting-path.png)
+
 Rename your exported file to reflect the trail and move it into the examples directory (e.g. `~/iNat-trails-master/examples/`). Now, lets rerun with our trail!
 
 To search for all taxa, simply run default parameters: 
@@ -232,8 +233,11 @@ ggsave("iNaturalistpapers.tiff",
 I added the text and arrow in powerpoint, but you can easily add it in ggplot using `ggtext`
 
 ![iNaturalist citation growth](images/iNatPaperGrowth.png)
+
 ## Resources
-[Caltopo](https://caltopo.com/)
+[Back to top](#table-of-contents)
+
+* [Caltopo](https://caltopo.com/)
 
 
 ---
