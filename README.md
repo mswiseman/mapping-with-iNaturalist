@@ -37,14 +37,14 @@ Today, I'd like to teach you about the power of these tools so you too can up yo
 
 Using iNaturalist is easy - simply capture the nature world, record any pertinent notes (e.g. location if your camera/phone doesn't capture lat/long coordinates), and upload to [iNaturalist](https://www.inaturalist.org/).  
 
-** Using iNaturalist on your Phone **
+**Using iNaturalist on your Phone**
 
 First, download the iNaturalist application to your iPhone or Android phone. Then, follow the instructions below (provided by [iNaturalist](https://www.inaturalist.org/pages/getting+started)).
 
 | ![iNaturalist using a phone](images/phone-observations.png) |
 |-|
 
-** Using iNaturalist on the web**
+**Using iNaturalist on the web**
 
 Simply navigate to [iNaturalist](https://www.inaturalist.org/), sign up for an account, and then you're ready to make observations. 
 
