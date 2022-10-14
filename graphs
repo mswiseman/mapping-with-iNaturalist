@@ -1,0 +1,4 @@
+## Code for graphs used in my talk
+
+Note: I often use powerpoint or Canva to add annotations to my figures when presenting them live (that way I can animate them). It's easy to add these annotations in R though using [`ggtext`](https://github.com/wilkelab/ggtext) or within ggplot using `geom_label` or `geom_text`.
+
