@@ -143,6 +143,7 @@ library(ggmap)             # powerful mapping tool
 #library(ggthemes)      # expanded themes, optional
 ```
 
+
 ---
 
 ## Mapping iNaturalist observations along a trail
@@ -304,9 +305,19 @@ I added the text and arrow in powerpoint, but you can easily add it in ggplot us
 ## Resources
 [Back to top](#table-of-contents)
 
+**Mapping**
 * [Caltopo](https://caltopo.com/) - free web-based mapping
+* [iNat National Park Observations](https://github.com/NatureServe/inat-nps-download) - for mapping National Park iNat observations
+
+**Data Analysis**
 * [pyNaturalist](https://github.com/pyinat/pyinaturalist) - manipulation of iNat data with python
-* [iNat National Park Observations](https://github.com/NatureServe/inat-nps-download) - for exploring National Park iNat observations
+* [iNaturalist API](https://api.inaturalist.org/)
+* [iNaturalist API Tutorial](https://forum.inaturalist.org/t/in-pursuit-of-mappiness-part-1/21864)
+* [iNaturalist GitHub Page](https://github.com/inaturalist/)
+
+**Other iNaturalist Tutorials**
+* [Creating Atlases on iNaturalist](https://www.inaturalist.org/pages/atlases)
+* [How to Annotate Observations](https://forum.inaturalist.org/t/using-identify-to-annotate-observations/1417)
 
 
 ---
