@@ -17,6 +17,7 @@ Make a dataframe with the output either manually (as I have) or by importing you
 ```r, iNaturalist publications overtime
 library(ggdark)            # for dark theme
 library(tidyverse)         # cleaning data
+library(readr)             # if importing via csv
 
 year <- c("2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021")
 papers <- c("33", "47", "35", "53", "74", "67", "148", "201", "309", "402", "645", "1120", "1730", "2800")
