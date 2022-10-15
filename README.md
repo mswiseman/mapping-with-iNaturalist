@@ -143,6 +143,109 @@ library(ggmap)             # powerful mapping tool
 #library(ggthemes)      # expanded themes, optional
 ```
 
+You can either make a nice list for exporting into GIS, Tableau etc. ...
+```r, inat csv
+# A function to call `get_inat_obs` iteratively for each taxon_id present in a vector
+batch_get_inat_obs <- function(
+  taxon_ids_vector,             # No Default, so required, a vector of taxids
+  place_id = 10, 
+  #place_id = "any",
+  geo = TRUE,                   # Default to TRUE
+  maxresults = 1000,            # Default to 1000 results max
+  #month = 10,                  # Uncomment to specify
+  meta = FALSE                  # Default to FALSE
+) {
+  
+  # The dataframe (empty now) which we will return at the end, once it's full of results
+  return_df = data.frame()
+  
+  # Iterate over the taxon ids in `taxon_ids_vector`, querying each again inaturalist 
+  for (tid in taxon_ids_vector) {
+    
+    #Report status to console
+    print(paste("Querying the following taxon id now:", tid))
+    
+    #Query inat here, using this taxon_id (`tid`, this iteration), and the other argument values
+    #from the function declaration
+    this_query = get_inat_obs(taxon_id = tid, 
+                              place_id = place_id,
+                              geo = geo,
+                              maxresults = maxresults,
+                              meta = meta)
+    
+    #Add the result of `get_inat_obs` on this iteration to a growing dataframe
+    return_df = rbind(return_df, this_query)
+
+  }
+  #After the loop is done, return the full dataframe
+  return(return_df)
+}
+
+# The vector of taxon_ids
+tids = c(47348, 48701, 415504, 63020, 48422, 49160, 521711)
+
+# Call the function and assign the result to `oregon_edibles`
+oregon_edibles = batch_get_inat_obs(tids)
+
+# Tidying data
+oregon_edible_accurate <- oregon_edibles %>%
+  filter(positional_accuracy < 5000, na.rm = TRUE)  %>%               #needs to be accurate within 5km
+  #filter(coordinates_obscured == "false") %>%                         #cant be obscured
+  filter(captive_cultivated == "false")   %>%                         #no cultivated specimens
+  separate(datetime, sep="-", into = c("year", "month", "day"))       #will be useful for Tableau
+
+# Renaming months
+oregon_edible_accurate$month[oregon_edible_accurate$month=="01"] <- "January"
+oregon_edible_accurate$month[oregon_edible_accurate$month=="02"] <- "February"
+oregon_edible_accurate$month[oregon_edible_accurate$month=="03"] <- "March"
+oregon_edible_accurate$month[oregon_edible_accurate$month=="04"] <- "April"
+oregon_edible_accurate$month[oregon_edible_accurate$month=="05"] <- "May"
+oregon_edible_accurate$month[oregon_edible_accurate$month=="06"] <- "June"
+oregon_edible_accurate$month[oregon_edible_accurate$month=="07"] <- "July"
+oregon_edible_accurate$month[oregon_edible_accurate$month=="08"] <- "August"
+oregon_edible_accurate$month[oregon_edible_accurate$month=="09"] <- "September"
+oregon_edible_accurate$month[oregon_edible_accurate$month=="10"] <- "October"
+oregon_edible_accurate$month[oregon_edible_accurate$month=="11"] <- "November"
+oregon_edible_accurate$month[oregon_edible_accurate$month=="12"] <- "December"
+
+
+
+write.csv(oregon_edibles, "edibles.csv")
+
+```
+
+Or you can use the data to map directly in R
+
+```r, 
+ggplot(data = county_info) +             
+  geom_polygon(aes(x = long,              #base map
+                   y = lat,
+                   group = group),
+               fill = "white",            #background color
+               color = "darkgray") +      #border color
+  coord_quickmap() +
+  geom_point(data = oregon_edible_accurate,               #these are the research grade observation points
+             mapping = aes(
+               x = longitude,
+               y = latitude,
+               fill = scientific_name),                    #changes color of point based on scientific name
+             color = "black",                              #outline of point
+             shape= 21,                                    #this is a circle that can be filled
+             alpha= 0.7) +                                 #alpha sets transparency (0-1) 
+  ggtitle(label = "October Oregon Observations")+
+theme_bw() +                                               #just a baseline theme
+  theme(
+    plot.background= element_blank(),                      #removes plot background
+    panel.background = element_rect(fill = "white"),       #sets panel background to white
+    panel.grid.major = element_blank(),                    #removes x/y major gridlines
+    panel.grid.minor = element_blank(),
+    legend.title = element_blank(),
+    #legend.position = "none",
+    axis.title.x = element_blank(),
+    axis.title.y = element_blank()) 
+
+```
+![October](images/october.png)
 
 ---
 
