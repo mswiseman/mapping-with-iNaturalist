@@ -1,3 +1,5 @@
+For the mapping code, see the [readme](README.md)
+
 # Code for graphs used in my talk
 
 * [Code for Counting and Visualizing Papers Discussing iNaturalist](#iNaturalist-publications-overtime)
