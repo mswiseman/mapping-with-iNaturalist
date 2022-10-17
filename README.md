@@ -149,9 +149,10 @@ To figure out a taxons ID, look at the iNaturalist URL. For example, for Inocybe
 
 You can similarly figure out locations by searching the location in iNat and checking the url. E.g. Oregon is 10 because the `place_id` = 10 (https://www.inaturalist.org/observations?place_id=10&subview=map). 
 
-So, lets check out my favorite mushrooms in Oregon during October with this little for loop function. I'll define the taxa I'm interested in 'tids' (short for taxon ids). For this search, I'll looking for Cantharellus spp. (47348), Boletus edulis (48701), Boletus regineus (415504), Sparassis spp. (63020), Hydnum spp. (48422), Hericium spp. (49160), and Tricholoma murrillianum (521711). Feel free to substitute the taxa (under `tids`) or the place under `place_id`. 
+So, lets check out my favorite mushrooms in Oregon during October with this little for loop function. First, laod the function below. You can customize any of the rinat parameters (place_id, geo, maxresults, etc., see rinat documentation). 
 
-```r, inat csv
+```r, inat function
+
 # A function to call `get_inat_obs` iteratively for each taxon_id present in a vector
 batch_get_inat_obs <- function(
   taxon_ids_vector,             # No Default, so required, a vector of taxids
@@ -187,6 +188,12 @@ batch_get_inat_obs <- function(
   return(return_df)
 }
 
+```
+
+After loading the function, I'll define the taxa I'm interested in 'tids' (short for taxon ids). For this search, I'll looking for Cantharellus spp. (47348), Boletus edulis (48701), Boletus regineus (415504), Sparassis spp. (63020), Hydnum spp. (48422), Hericium spp. (49160), and Tricholoma murrillianum (521711). Feel free to substitute the taxa (under `tids`) or the place under `place_id`. 
+
+```r, prepping data
+
 # The vector of taxon_ids
 tids = c(47348, 48701, 415504, 63020, 48422, 49160, 521711)
 
@@ -215,14 +222,12 @@ oregon_edible_accurate$month[oregon_edible_accurate$month=="11"] <- "November"
 oregon_edible_accurate$month[oregon_edible_accurate$month=="12"] <- "December"
 
 
-
 write.csv(oregon_edibles, "edibles.csv")
-
 ```
 
 Or you can use the data to map directly in R. To map it in R, we have to first make a polygon of the state we're mapping. One quick way to do this is by using the [maps](https://github.com/nextcloud/maps) package. 
 
-```{r}
+```r, background map
 # Use the map packages to make a dataframe of the polygons in map_data("state")
 # You can change oregon to any state, just keep it lowercase
 
@@ -236,7 +241,7 @@ county_info <- map_data("county", region=which_state)  # County boundaries
 
 Okay, now we can combine the iNaturalist data with the polygon we just created using ggplot. 
 
-```r, 
+```r, plotting inat data
 ggplot(data = county_info) +             
   geom_polygon(aes(x = long,              # base map
                    y = lat,
@@ -271,7 +276,7 @@ You can do powerful filtering of your data with [tidyr](https://tidyr.tidyverse.
 
 For example, say I want to just look at 2022 observations during September and October, I'd first filter for these conditions and then I can feed it directly into ggplot:
 
-```r
+```r, filtering by month
 oregon_edible_accurate %>%
   filter(month %in% c("September","October")) %>%          # select for months
   filter(year =="2022") %>%                                # select 2022 and feed directly into ggplot
