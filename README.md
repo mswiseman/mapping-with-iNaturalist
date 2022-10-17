@@ -145,7 +145,7 @@ library(unikn)             # custom palletes
 
 You can either make a nice list for exporting into GIS, Tableau etc. ...
 
-To figure out a taxons ID, look at the iNaturalist URL. For example, for Inocybe calamistratum, the taxon ID would be 1112482 because the URL is `https://www.inaturalist.org/taxa/1112482-Inosperma-calamistratum`.
+To figure out a taxons ID, look at the iNaturalist URL. For example, for *Inocybe calamistratum*, the taxon ID would be 1112482 because the URL is `https://www.inaturalist.org/taxa/1112482-Inosperma-calamistratum`.
 
 You can similarly figure out locations by searching the location in iNat and checking the url. E.g. Oregon is 10 because the `place_id` = 10 (https://www.inaturalist.org/observations?place_id=10&subview=map). 
 
@@ -190,7 +190,7 @@ batch_get_inat_obs <- function(
 
 ```
 
-After loading the function, I'll define the taxa I'm interested in 'tids' (short for taxon ids). For this search, I'll looking for Cantharellus spp. (47348), Boletus edulis (48701), Boletus regineus (415504), Sparassis spp. (63020), Hydnum spp. (48422), Hericium spp. (49160), and Tricholoma murrillianum (521711). Feel free to substitute the taxa (under `tids`) or the place under `place_id`. 
+After loading the function, I'll define the taxa I'm interested in `tids` (short for taxon ids). For this search, I'll looking for *Cantharellus* spp. (47348), *Boletus edulis* (48701), *Boletus regineus* (415504), *Sparassis* spp. (63020), *Hydnum* spp. (48422), *Hericium* spp. (49160), and *Tricholoma murrillianum* (521711). Feel free to substitute the taxa (under `tids`) or the place under `place_id`. 
 
 ```r, prepping data
 
