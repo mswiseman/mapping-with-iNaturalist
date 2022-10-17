@@ -20,7 +20,7 @@ Today, I'd like to teach you about the power of these tools so you too can up yo
   * [Loading and Installing Packages](#loading-and-installing-packages)
 * [Code and Instructions for Mapping iNaturalist Data in R](#mapping-inat-in-r)
 * [Mapping along a trail](#Mapping-iNaturalist-observations-along-a-trail)
-* [Code for Counting and Visualizing Papers Discussing iNaturalist](#inat-keyword)
+* [URL Hacks](#URL-Hacks)
 * [Resources](#resources)
 * [Other](#other)
 * [Contact](#contact)
@@ -138,6 +138,7 @@ library(lubridate)         # changing data format easily
 library(maps)              # database of maps
 library(janitor)           # helpful data tidying tools
 library(ggmap)             # powerful mapping tool
+library(unikn)             # custom palletes
 
 ### optional - for aesthetics ###
 #library(ggthemes)      # expanded themes, optional
@@ -448,7 +449,12 @@ If your taxon does not yet have a computer vision model, you can download iNatur
 *more to come...*
 
 ---
+## URL Hacks
+[Back to top](#table-of-contents)
 
+Interested in an easier way of getting more advanced mapping visualizations? You can literally use the iNaturalist API via the URL. Lots of great URL hacks [here](https://forum.inaturalist.org/t/how-to-use-inaturalists-search-urls-wiki/63).
+
+---
 ## Resources
 [Back to top](#table-of-contents)
 
