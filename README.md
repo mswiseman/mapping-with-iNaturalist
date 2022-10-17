@@ -149,7 +149,7 @@ To figure out a taxons ID, look at the iNaturalist URL. For example, for Inocybe
 
 You can similarly figure out locations by searching the location in iNat and checking the url. E.g. Oregon is 10 because the `place_id` = 10 (https://www.inaturalist.org/observations?place_id=10&subview=map). 
 
-So, lets check out my favorite mushrooms in Oregon during October with this little for loop function. First, laod the function below. You can customize any of the rinat parameters (place_id, geo, maxresults, etc., see rinat documentation). 
+So, lets check out my favorite mushrooms in Oregon during October with this little for loop function. First, load the function below. You can customize any of the rinat parameters (place_id, geo, maxresults, etc., see [rinat](https://cran.r-project.org/web/packages/rinat/index.html) documentation). 
 
 ```r, inat function
 
