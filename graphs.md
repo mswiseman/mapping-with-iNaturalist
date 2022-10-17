@@ -1,4 +1,4 @@
-For the mapping code, see the [readme](README.md)
+**For the mapping code, see the [readme](README.md).**
 
 # Code for graphs used in my talk
 
