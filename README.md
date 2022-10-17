@@ -295,8 +295,43 @@ oregon_edible_accurate %>%
 
 ![Oregon_Sept_Oct](images/00002d.png)
 
+Maybe I want to group the colors by genus. To do that, I'd make a custom palette. 
 
+```r, custom palette
 
+# tids_pal = taxon ID palette
+# the colors match with the respective taxon in order. 
+tids_pal <- newpal(col = 
+                     c("#CC79A7", "#CC79A7", "#CC79A7", "#0072B2", "#0072B2", "#0072B2", "#0072B2", "#0072B2", "cornsilk", "cornsilk", "#009E73", "#F0E442", "#E69F00"), 
+                   names = c("Boletus edulis", "Boletus edulis grandedulis", "Boletus regineus", "Cantharellus", "Cantharellus cascadensis", "Cantharellus formosus", "Cantharellus roseocanus", "Cantharellus subalbidus", "Hericium abietis", "Hericium erinaceus", "Hydnum", "Sparassis radicata", "Tricholoma murrillianum"))
+   
+# You can check that everything lines up use view
+View(tids_pal)
+
+# Look good? Okay, now run the code from above but add `scale_fill_manual`
+
+oregon_edible_accurate %>%
+  filter(month %in% c("September","October")) %>%          # select for months
+  filter(year =="2022") %>%                                # select 2022
+  ggplot() +
+  geom_polygon(data = oregon, 
+               aes(x = long,              #base map
+                   y = lat,
+                   group = group),
+               fill = "white",            #background color
+               color = "darkgray") +      #border color
+  geom_point(mapping = aes(
+               x = longitude,
+               y = latitude,
+               fill = scientific_name),                    # changes color of point based on scientific name
+             color = "black",                              # outline of point
+             shape = 21,                                   # this is a circle that can be filled
+             alpha = 0.7) +                                # alpha sets transparency (0-1) 
+  scale_fill_manual(values = tids_pal) +
+  theme_classic()
+```
+
+[custompallete](images/000042.png)
 ---
 
 ## Mapping iNaturalist observations along a trail
