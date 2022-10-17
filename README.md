@@ -144,15 +144,21 @@ library(ggmap)             # powerful mapping tool
 ```
 
 You can either make a nice list for exporting into GIS, Tableau etc. ...
+
+To figure out a taxons ID, look at the iNaturalist URL. For example, for Inocybe calamistratum, the taxon ID would be 1112482 because the URL is `https://www.inaturalist.org/taxa/1112482-Inosperma-calamistratum`.
+
+You can similarly figure out locations by searching the location in iNat and checking the url. E.g. Oregon is 10 because the `place_id` = 10 (https://www.inaturalist.org/observations?place_id=10&subview=map). 
+
+So, lets check out my favorite mushrooms in Oregon during October with this little for loop function. I'll define the taxa I'm interested in 'tids' (short for taxon ids). For this search, I'll looking for Cantharellus spp. (47348), Boletus edulis (48701), Boletus regineus (415504), Sparassis spp. (63020), Hydnum spp. (48422), Hericium spp. (49160), and Tricholoma murrillianum (521711). Feel free to substitute the taxa (under `tids`) or the place under `place_id`. 
+
 ```r, inat csv
 # A function to call `get_inat_obs` iteratively for each taxon_id present in a vector
 batch_get_inat_obs <- function(
   taxon_ids_vector,             # No Default, so required, a vector of taxids
   place_id = 10, 
-  #place_id = "any",
   geo = TRUE,                   # Default to TRUE
   maxresults = 1000,            # Default to 1000 results max
-  #month = 10,                  # Uncomment to specify
+  #month = 10,                  # Uncomment to specify month
   meta = FALSE                  # Default to FALSE
 ) {
   
@@ -358,50 +364,6 @@ If your taxon does not yet have a computer vision model, you can download iNatur
 * [Butterfly Machine Learning](https://github.com/CSellwood1/Deep-learning/blob/master/wildlife_images_CS.docx) - an excellent and thorough iNat machine learning tutorial
 
 *more to come...*
-
----
-
-## iNaturalist publications overtime
-[Back to top](#table-of-contents)
-
-Scrape Google Scholar to count iNaturalist publications between inception (2008) and today. Python script [here](https://github.com/Pold87/academic-keyword-occurrence). 
-
-To run: `python extract_occurrences.py 'iNaturalist' 2008 2022`
-
-The output will print to your screen and you can either save it directly to a new file by copy+paste or using a redirect (>).
-
-Make a dataframe with the output either manually (as I have) or by importing your table (load the `readr` library and then run `read.csv([yourfilepath.csv`])).
-
-```r, iNaturalist publications overtime
-library(ggdark)
-
-year <- c("2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021")
-papers <- c("33", "47", "35", "53", "74", "67", "148", "201", "309", "402", "645", "1120", "1730", "2800")
-df <- data.frame(year, papers)
-
-ggplot(df) +
-  geom_col(aes(x=year, y=as.numeric(papers)), fill = "#80AA33") +
-  ggtitle("New Scientific Peer-Reviewed Papers Referencing iNaturalist") +
-  scale_fill_gradientn(colours = rainbow(5))+
-  ylab("Number of Papers") +
-  dark_theme_classic() +
-    theme(
-    axis.title.x = element_blank(),
-    plot.title = element_text(face = "bold", size = 14),
-    axis.text = element_text(face = "bold", color = "white", size = 10)
-  )
-
-ggsave("iNaturalistpapers.tiff",
-       dpi = 300, 
-       width = 7,
-       height = 5,
-       units = "in")
-
-```
-
-I added the text and arrow in powerpoint, but you can easily add it in ggplot using `ggtext`
-
-![iNaturalist citation growth](images/iNatPaperGrowth.png)
 
 ---
 
