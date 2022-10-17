@@ -225,7 +225,12 @@ oregon_edible_accurate$month[oregon_edible_accurate$month=="12"] <- "December"
 write.csv(oregon_edibles, "edibles.csv")
 ```
 
-Or you can use the data to map directly in R. To map it in R, we have to first make a polygon of the state we're mapping. One quick way to do this is by using the [maps](https://github.com/nextcloud/maps) package. 
+![inat csv](images/inat_csv.png)
+
+Now we have a great species list for use in R, Tableau, ArcGIS, GoogleMaps, etc. 
+
+
+To map it in R, we have to first make a polygon of the state we're mapping. One quick way to do this is by using the [maps](https://github.com/nextcloud/maps) package. 
 
 ```r, background map
 # Use the map packages to make a dataframe of the polygons in map_data("state")
