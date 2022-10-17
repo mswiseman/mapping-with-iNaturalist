@@ -195,10 +195,10 @@ oregon_edibles = batch_get_inat_obs(tids)
 
 # Tidying data
 oregon_edible_accurate <- oregon_edibles %>%
-  filter(positional_accuracy < 5000, na.rm = TRUE)  %>%               #needs to be accurate within 5km
-  #filter(coordinates_obscured == "false") %>%                         #cant be obscured
-  filter(captive_cultivated == "false")   %>%                         #no cultivated specimens
-  separate(datetime, sep="-", into = c("year", "month", "day"))       #will be useful for Tableau
+  filter(positional_accuracy < 5000, na.rm = TRUE)  %>%                # needs to be accurate within 5km
+  #filter(coordinates_obscured == "false") %>%                         # cant be obscured
+  filter(captive_cultivated == "false")   %>%                          # no cultivated specimens
+  separate(datetime, sep="-", into = c("year", "month", "day"))        # will be useful for Tableau
 
 # Renaming months
 oregon_edible_accurate$month[oregon_edible_accurate$month=="01"] <- "January"
@@ -220,30 +220,44 @@ write.csv(oregon_edibles, "edibles.csv")
 
 ```
 
-Or you can use the data to map directly in R
+Or you can use the data to map directly in R. To map it in R, we have to first make a polygon of the state we're mapping. One quick way to do this is by using the [maps](https://github.com/nextcloud/maps) package. 
+
+```{r}
+# Use the map packages to make a dataframe of the polygons in map_data("state")
+# You can change oregon to any state, just keep it lowercase
+
+oregon <- map_data("state") %>%
+  filter(region %in% ("oregon"))
+  
+# For county info
+which_state <- "oregon"
+county_info <- map_data("county", region=which_state)  # County boundaries
+```
+
+Okay, now we can combine the iNaturalist data with the polygon we just created using ggplot. 
 
 ```r, 
 ggplot(data = county_info) +             
-  geom_polygon(aes(x = long,              #base map
+  geom_polygon(aes(x = long,              # base map
                    y = lat,
                    group = group),
-               fill = "white",            #background color
-               color = "darkgray") +      #border color
+               fill = "white",            # background color
+               color = "darkgray") +      # border color
   coord_quickmap() +
   geom_point(data = oregon_edible_accurate,               #these are the research grade observation points
              mapping = aes(
                x = longitude,
                y = latitude,
-               fill = scientific_name),                    #changes color of point based on scientific name
-             color = "black",                              #outline of point
-             shape= 21,                                    #this is a circle that can be filled
-             alpha= 0.7) +                                 #alpha sets transparency (0-1) 
+               fill = scientific_name),                    # changes color of point based on scientific name
+             color = "black",                              # outline of point
+             shape= 21,                                    # this is a circle that can be filled
+             alpha= 0.7) +                                 # alpha sets transparency (0-1) 
   ggtitle(label = "October Oregon Observations")+
-theme_bw() +                                               #just a baseline theme
+theme_bw() +                                               # just a baseline theme
   theme(
-    plot.background= element_blank(),                      #removes plot background
-    panel.background = element_rect(fill = "white"),       #sets panel background to white
-    panel.grid.major = element_blank(),                    #removes x/y major gridlines
+    plot.background= element_blank(),                      # removes plot background
+    panel.background = element_rect(fill = "white"),       # sets panel background to white
+    panel.grid.major = element_blank(),                    # removes x/y major gridlines
     panel.grid.minor = element_blank(),
     legend.title = element_blank(),
     #legend.position = "none",
@@ -252,6 +266,36 @@ theme_bw() +                                               #just a baseline them
 
 ```
 ![October](images/october.png)
+
+You can do powerful filtering of your data with [tidyr](https://tidyr.tidyverse.org/) if you decide to only look at a certain taxon, date, etc. 
+
+For example, say I want to just look at 2022 observations during September and October, I'd first filter for these conditions and then I can feed it directly into ggplot:
+
+```r
+oregon_edible_accurate %>%
+  filter(month %in% c("September","October")) %>%          # select for months
+  filter(year =="2022") %>%                                # select 2022 and feed directly into ggplot
+  ggplot() +
+  geom_polygon(data = oregon, 
+               aes(x = long,                               # base map
+                   y = lat,
+                   group = group),
+               fill = "white",                             # background color
+               color = "darkgray") +                       # border color
+  geom_point(mapping = aes(
+               x = longitude,
+               y = latitude,
+               fill = scientific_name),                    # changes color of point based on scientific name
+             color = "black",                              # outline of point
+             shape = 21,                                   # this is a circle that can be filled
+             alpha = 0.7) +                                # alpha sets transparency (0-1) 
+  theme_classic()                                          # this removes the gray box
+   
+```
+
+![Oregon_Sept_Oct](images/00002d.png)
+
+
 
 ---
 
