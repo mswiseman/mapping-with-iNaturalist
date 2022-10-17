@@ -332,6 +332,9 @@ oregon_edible_accurate %>%
 ```
 
 ![custompallete](images/000042.png)
+
+I've written some more examples of mapping iNaturalist data in R [here](https://github.com/mswiseman/R-examples/blob/main/iNat.md) and [here](https://github.com/mswiseman/R-examples/blob/main/animations.md). 
+
 ---
 
 ## Mapping iNaturalist observations along a trail
