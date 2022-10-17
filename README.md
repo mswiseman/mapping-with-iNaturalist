@@ -18,7 +18,7 @@ Today, I'd like to teach you about the power of these tools so you too can up yo
   * [User-friendly R coding with Rstudio](#User-friendly-R-coding-with-Rstudio)
   * [Comprehensive-R-Archive-Network-(CRAN)](#Comprehensive-R-Archive-Network-(CRAN))
   * [Loading and Installing Packages](#loading-and-installing-packages)
-* [Code and Instructions for Mapping iNaturalist Data in R](#mapping-inat-in-r)
+* [Code and Instructions for Mapping iNaturalist Data in R](#Using-R-for-powerful-iNaturalist-data-analyses)
 * [Mapping along a trail](#Mapping-iNaturalist-observations-along-a-trail)
 * [URL Hacks](#URL-Hacks)
 * [Resources](#resources)
