@@ -331,7 +331,7 @@ oregon_edible_accurate %>%
   theme_classic()
 ```
 
-[custompallete](images/000042.png)
+![custompallete](images/000042.png)
 ---
 
 ## Mapping iNaturalist observations along a trail
