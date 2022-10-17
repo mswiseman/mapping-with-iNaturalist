@@ -16,13 +16,12 @@ Today, I'd like to teach you about the power of these tools so you too can up yo
 * [Introduction to iNaturalist](#introduction-to-inaturalist)
 * [Introduction to R](#introduction-to-r)
   * [User-friendly R coding with Rstudio](#User-friendly-R-coding-with-Rstudio)
-  * [Comprehensive-R-Archive-Network-(CRAN)](#Comprehensive-R-Archive-Network-(CRAN))
-  * [Loading and Installing Packages](#loading-and-installing-packages)
+  * [Comprehensive-R-Archive-Network-(CRAN)](#Comprehensive-R-Archive-Network) 
+  * [Loading and Installing Packages](#loading-required-packages)
 * [Code and Instructions for Mapping iNaturalist Data in R](#Using-R-for-powerful-iNaturalist-data-analyses)
 * [Mapping along a trail](#Mapping-iNaturalist-observations-along-a-trail)
 * [URL Hacks](#URL-Hacks)
 * [Resources](#resources)
-* [Other](#other)
 * [Contact](#contact)
 * [Acknowledgements](#acknowledgements)
 
@@ -84,7 +83,7 @@ There's a nice list of Rstudio tutorials [here](https://education.rstudio.com/le
 
 ---
 
-### Comprehensive R Archive Network (CRAN)
+### Comprehensive R Archive Network
 [Back to top](#table-of-contents)
 
 R is an open source tool which offers great flexibility in customization of code, but can also present issues with package compatibility (e.g. conflicting code in between libraries) and poor package management (i.e. things get outdated and abandoned). You can always check the status of a package by looking at it's Comprehensive R Archive Network (CRAN) repository information. The CRAN page for a package will tell you when it was last updated, any necessary dependencies for the package, will link you to the reference manual, and will link you to a page where you can submit bug fix requests. **Most packages are on [CRAN](https://cran.r-project.org/) or are directly hosted on [GitHub](https://github.com/).**
