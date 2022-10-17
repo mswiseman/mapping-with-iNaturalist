@@ -262,7 +262,7 @@ ggplot(data = county_info) +
              color = "black",                              # outline of point
              shape= 21,                                    # this is a circle that can be filled
              alpha= 0.7) +                                 # alpha sets transparency (0-1) 
-  ggtitle(label = "October Oregon Observations")+
+  ggtitle(label = "September Oregon Observations")+
 theme_bw() +                                               # just a baseline theme
   theme(
     plot.background= element_blank(),                      # removes plot background
